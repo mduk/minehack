@@ -1,0 +1,8 @@
+name             'hackday'
+maintainer       'Atalanta Systems Ltd'
+maintainer_email 'support@atalanta-systems.com'
+license          'Apache 2.0'
+description      'Installs/Configures hackday'
+long_description 'Installs/Configures hackday'
+version          '0.1.0'
+depends 'minecraft'
