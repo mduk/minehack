@@ -1,0 +1,26 @@
+{
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "cookbook_paths": ["vendor/cookbooks"],
+      "run_list": "recipe[hackday::default]"
+    }
+  ],
+
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "eu-west-1",
+      "source_ami": "ami-230b1b57",
+      "instance_type": "m3.large",
+      "ssh_username": "root",
+      "ssh_timeout": "5m",
+      "ami_name": "minecraft {{isotime | clean_ami_name}}",
+      "tags": {
+        "Name": "minecraft {{isotime | clean_ami_name}}"
+      },
+      "security_group_id": "sg-961d01fa",
+      "subnet_id": "subnet-a47fcbcd"
+    }
+  ]
+}

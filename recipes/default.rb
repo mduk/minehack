@@ -18,3 +18,17 @@
 #
 
 include_recipe 'minecraft'
+include_recipe 'sudo'
+include_recipe 'user'
+
+
+user_account 'snsdk' do
+  comment 'Stephen and Daniel'
+  home '/home/snsdk'
+  shell '/bin/bash'
+  password '$1$PVRBogDo$A5PS3dW3gK9rjujPjDWdQ.'
+end
+
+service 'iptables' do
+  action [:disable, :stop]
+end
