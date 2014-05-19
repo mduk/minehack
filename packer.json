@@ -10,17 +10,15 @@
   "builders": [
     {
       "type": "amazon-ebs",
-      "region": "eu-west-1",
-      "source_ami": "ami-230b1b57",
-      "instance_type": "m3.large",
-      "ssh_username": "root",
+      "region": "us-west-2",
+      "source_ami": "ami-6ac2a85a",
+      "instance_type": "t1.micro",
+      "ssh_username": "ubuntu",
       "ssh_timeout": "5m",
       "ami_name": "minecraft {{isotime | clean_ami_name}}",
       "tags": {
         "Name": "minecraft {{isotime | clean_ami_name}}"
-      },
-      "security_group_id": "sg-961d01fa",
-      "subnet_id": "subnet-a47fcbcd"
+      }
     }
   ]
 }
